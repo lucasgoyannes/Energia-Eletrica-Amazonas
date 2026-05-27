@@ -1,4 +1,4 @@
-# Acesso à Energia Elétrica no Amazonas - Análise Geoespacial
+# Acesso à Energia Elétrica no Amazonas: Análise Geoespacial
 
 Projeto acadêmico com foco em **inclusão energética** no estado do Amazonas. A análise cobre todo o pipeline de dados: desde o ETL com dados reais do Censo IBGE 2022 até visualizações voltadas para tomadores de decisão públicos.
 
@@ -26,14 +26,14 @@ Mapear e analisar o acesso à energia elétrica nos 62 municípios do Amazonas, 
 
 ## Notebooks
 
-### 01 — ETL
+### 01: ETL
 - Leitura dos dados de domicílios por município
 - Reprojeção do sistema de coordenadas para **EPSG:31980** (SIRGAS 2000 / UTM zona 20S)
 - Join espacial entre dados tabulares e geometria dos municípios
 - Cálculo da distância de cada município até Manaus (em km)
 - Exportação dos arquivos `municipios-am.geojson` e `energia-am.geojson`
 
-### 02 — Análise Exploratória
+### 02: Análise Exploratória
 Responde 3 perguntas quantitativas:
 1. Qual o percentual de domicílios sem acesso à energia por município?
 2. Quais os 15 municípios com maior exclusão energética? (ranking)
@@ -41,16 +41,16 @@ Responde 3 perguntas quantitativas:
 
 Além da análise de **correlação de Pearson** entre distância à capital e nível de exclusão energética.
 
-### 03 — Visualizações
+### 03: Visualizações
 5 visualizações desenvolvidas para um público não-técnico (gestores públicos):
 
 | # | Visualização |
 |---|---|
-| 1 | Mapa coroplético — % sem energia por município |
-| 2 | Gráfico de barras — top 15 municípios com maior exclusão |
-| 3 | Scatter — distância a Manaus × % sem energia |
-| 4 | Mapa de bolhas — porte do município × exclusão energética |
-| 5 | Gráfico agrupado — rural vs urbano por mesorregião |
+| 1 | Mapa coroplético: % sem energia por município |
+| 2 | Gráfico de barras: top 15 municípios com maior exclusão |
+| 3 | Scatter: distância a Manaus × % sem energia |
+| 4 | Mapa de bolhas: porte do município × exclusão energética |
+| 5 | Gráfico agrupado: rural vs urbano por mesorregião |
 
 ---
 
@@ -60,7 +60,7 @@ Além da análise de **correlação de Pearson** entre distância à capital e n
 - Municípios como **São Gabriel da Cachoeira, Ipixuna, Barcelos e Atalaia do Norte** apresentam os piores indicadores, com mais de 40% dos domicílios rurais sem acesso adequado
 - A **zona rural** do AM tem índice de exclusão energética aproximadamente 8x maior que a zona urbana
 - Municípios conectados ao SIN (Manaus, Iranduba, Itacoatiara, Parintins) apresentam os menores índices do estado
-- A correlação entre distância à capital e exclusão energética é positiva, mas moderada — o principal fator determinante é a integração ou não ao SIN, não apenas a distância geográfica
+- A correlação entre distância à capital e exclusão energética é positiva, mas moderada: o principal fator determinante é a integração ou não ao SIN, não apenas a distância geográfica
 
 ---
 
@@ -99,15 +99,15 @@ O notebook 01 gera os arquivos `municipios-am.geojson` e `energia-am.geojson`, q
 
 ## Fontes de dados
 
-- **Censo Demográfico 2022** — IBGE (Agregados por Setores Censitários)
-- **Malha municipal do Amazonas** — IBGE (GeoJSON)
-- **Dados de cobertura energética** — ANEEL / IEMA (estimativas por município)
+- **Censo Demográfico 2022**: IBGE (Agregados por Setores Censitários)
+- **Malha municipal do Amazonas**: IBGE (GeoJSON)
+- **Dados de cobertura energética**: ANEEL / IEMA (estimativas por município)
 
 ---
 
 ## Contexto
 
-O Amazonas possui 62 municípios, dos quais apenas 6 estão integrados ao **Sistema Interligado Nacional (SIN)**. Os demais dependem de **Sistemas Isolados (SISOL)**, majoritariamente movidos a diesel — o que resulta em energia mais cara, menos confiável e ambientalmente mais impactante. O estado concentra o maior número de SISOL da Amazônia Legal, com cerca de 97 sistemas isolados em operação.
+O Amazonas possui 62 municípios, dos quais apenas 6 estão integrados ao **Sistema Interligado Nacional (SIN)**. Os demais dependem de **Sistemas Isolados (SISOL)**, majoritariamente movidos a diesel: o que resulta em energia mais cara, menos confiável e ambientalmente mais impactante. O estado concentra o maior número de SISOL da Amazônia Legal, com cerca de 97 sistemas isolados em operação.
 
 ---
 
